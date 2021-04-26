@@ -1,9 +1,9 @@
 function [ class ] = DBSCAN(dis, eps, minPts)
 
-max_dis = max(max(dis));
-if max_dis > 1
-    dis = dis/max_dis;
-end
+% max_dis = max(max(dis)); % normalise dis matrix
+% if max_dis > 1
+%    dis = dis/max_dis;
+% end
 
 m_adjacency = dis <= eps;
 l_core = sum(m_adjacency, 2) >= minPts;
