@@ -22,14 +22,8 @@ class_core = conncomp(g_dbscan);
 
 [l_assign_dis, l_assign_core] = min(dis(l_core, :));
 
-if size(class_core) == [1, 1]
-    class = class + 1;
-    return
-end
-
 class = class_core(l_assign_core);
 class(l_assign_dis > eps) = -1;
-
 
 class = class';
 
